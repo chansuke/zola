@@ -177,7 +177,7 @@ async fn response_error_injector(
         .map(|req| {
             req.headers()
                 .get(header::CONTENT_TYPE)
-                .map(|val| val != &HeaderValue::from_static("text/html"))
+                .map(|val| val != HeaderValue::from_static("text/html"))
                 .unwrap_or(true)
         })
         .unwrap_or(true)
